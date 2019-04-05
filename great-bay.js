@@ -15,6 +15,11 @@ var connection = mysql.createConnection({
 });
 
 function post(){
+    connection.connect(function(err) {
+        if (err) throw err;
+    
+        start();
+      });
     inquirer.prompt([
         {
             name: "item",
@@ -63,8 +68,4 @@ var ask = function(){
 }
 ask();
 
-// connection.connect(function(err) {
-//     if (err) throw err;
 
-//     start();
-//   });
