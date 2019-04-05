@@ -9,17 +9,19 @@ var connection = mysql.createConnection({
 
     user: "root",
 
-    password: "Tishie55",
+    password: "h0usTon1",
 
     database: "great_bayDB"
 });
+   
 
 function post(){
-    connection.connect(function(err) {
+     connection.connect(function(err) {
         if (err) throw err;
     
-        start();
+        // start();
       });
+
     inquirer.prompt([
         {
             name: "item",
@@ -44,6 +46,14 @@ function post(){
     
 }
 
+function bid(){
+    var query = connection.query("SELECT * FROM auctions", function(err, res){
+        for(var i = 0; i < res.length; i++){
+        console.log("ID: " + res[i].id + " | " + "ITEM: " + res[i].item_name + " | " + "CURRENT BID: " + res[i].highest_bid + " | ")
+        }
+    })
+}
+
   
 var ask = function(){
     inquirer.prompt([
@@ -59,7 +69,7 @@ var ask = function(){
         var answers = answers.action;
 
         switch(answers){
-            case 'bid': console.log("bidding now")
+            case 'bid': bid()
             break;
             case "post": post()
             break;
