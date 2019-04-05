@@ -1,7 +1,6 @@
 {
   "name": "great-bay",
   "version": "1.0.0",
-<<<<<<< HEAD
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,24 +8,8 @@
   },
   "author": "",
   "license": "ISC",
-=======
-  "description": "In class group assignment",
-  "main": "great-bay.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/momack55/great-bay.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/momack55/great-bay/issues"
-  },
-  "homepage": "https://github.com/momack55/great-bay#readme",
->>>>>>> 1dd7f6453cbc17c4a8854d6ba03b0039696a1b04
   "dependencies": {
-    "inquirer": "^6.2.2"
+    "inquirer": "^6.2.2",
+    "mysql": "^2.16.0"
   }
 }

@@ -14,13 +14,33 @@ var connection = mysql.createConnection({
     database: "great_bayDB"
 });
 
-connection.connect(function(err) {
-    if (err) throw err;
+function post(){
+    inquirer.prompt([
+        {
+            name: "item",
+            message: "What is the items name?",
+            type: "input"
+        },
+        {
+            name: "bid",
+            message: "what is the opening bid?",
+            type: "intput"
+        }
+    ]).then(function(answers){
+        var answers = answers;
+        var query = connection.query("INSERT INTO auctions SET ?",{
+            item_name: answers.item,
+            category: "post",
+            starting_bid: answers.bid,
+            highest_bid: answers.bid,
 
-    start();
-  });
+        })
+    })
+    
+}
+
   
-  var ask = function(){
+var ask = function(){
     inquirer.prompt([
         {
            name: "action",
@@ -36,9 +56,15 @@ connection.connect(function(err) {
         switch(answers){
             case 'bid': console.log("bidding now")
             break;
-            case "post": console.log("posting now")
+            case "post": post()
             break;
         }
     })
 }
 ask();
+
+// connection.connect(function(err) {
+//     if (err) throw err;
+
+//     start();
+//   });
