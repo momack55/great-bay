@@ -1,0 +1,22 @@
+{
+  "name": "great-bay",
+  "version": "1.0.0",
+  "description": "In class group assignment",
+  "main": "great-bay.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/momack55/great-bay.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/momack55/great-bay/issues"
+  },
+  "homepage": "https://github.com/momack55/great-bay#readme",
+  "dependencies": {
+    "inquirer": "^6.2.2"
+  }
+}
